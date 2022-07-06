@@ -1,0 +1,30 @@
+// Programa informado um número, e calculando a sequência de Fibonacci, retorna uma mensagem avisando se o número informado pertence ou não a sequência.
+package application;
+
+import java.util.Scanner;
+
+public class Program {
+
+	 public static void main (String[] args) throws java.lang.Exception {
+		  Scanner sc = new Scanner(System.in);
+		  System.out.print("Digite o número que deseja saber se faz parte da sequencia de Fibonacci: ");
+	      int n = sc.nextInt();
+	      
+	      int x = 0;
+	      int y = 1;
+	      while (n > x || n > y) {
+	    	  x = x + y;
+	    	  y = y + x;
+	      }
+	      if (n == x ) {
+    		  System.out.println("O numero " + n + " está dentro da sequência de Fibonacci!");
+      }
+    	  else {
+    		  System.out.println("O numero "
+    		  		+ "" + n + " não está dentro da sequência de Fibonacci!");
+    	  }
+	      
+	      
+	      sc.close();
+	 }
+ }
