@@ -5,17 +5,23 @@ import java.util.Scanner;
 
 public class Program {
 
-	 public static void main (String[] args) throws java.lang.Exception {
-		  Scanner sc = new Scanner(System.in);
-		  System.out.print("Digite a palavra que você quer inverter: ");
-	      String str = sc.nextLine();
-	      System.out.println(new Program().str_reverse(str)); 
-	  }
-	  public String str_reverse(String str) {
-	      if(str.isEmpty()) {
-	          return str;
-	      }
-	      
-	      return str.substring(str.length() - 1) + str_reverse(str.substring(0, str.length() - 1));
-	  }
- }
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Digite a palavra que você deseja inverter: ");
+		String str = sc.nextLine();
+		System.out.println(str);
+		char[] ch = str.toCharArray();
+	    int begin = 0;
+	    int end = ch.length-1;
+	    char temp;
+	    while(end>begin){
+	        temp = ch[begin];
+	        ch[begin] = ch[end];
+	        ch[end] = temp;
+	        end--;
+	        begin++;
+	    }
+	    str = new String(ch);
+	    System.out.println(str);
+	}
+}
